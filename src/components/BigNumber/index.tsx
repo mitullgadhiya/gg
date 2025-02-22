@@ -1,5 +1,4 @@
 import { type ReactNode } from "react"
-import { useRouter } from "next/router"
 import { MdInfoOutline } from "react-icons/md"
 
 import { cn } from "@/lib/utils/cn"
