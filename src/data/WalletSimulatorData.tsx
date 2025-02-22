@@ -163,7 +163,7 @@ export const walletOnboardingSimData: SimulatorData = {
         ),
       },
       {
-        header: "That's it! Welcome to Ramicoin 🎉",
+        header: "That&#39;s it! Welcome to Ramicoin 🎉",
         description: (
           <p>
             In the next lesson we&apos;ll learn how to use your new account to
@@ -204,7 +204,7 @@ export const walletOnboardingSimData: SimulatorData = {
             </p>
             <p>
               Let&apos;s first look at how to receive Ramicoin (RAMI),
-              ramicoin.com's native currency.
+              ramicoin.com&#39;s native currency.
             </p>
             <p>
               Click the &quot;Receive&quot; button to see how to receive RAMI.
@@ -230,7 +230,7 @@ export const walletOnboardingSimData: SimulatorData = {
         ),
       },
       {
-        header: "You received Ramicoin! Now let's send some",
+        header: "You received Ramicoin! Now let&#39;s send some",
         description: (
           <>
             <p>
