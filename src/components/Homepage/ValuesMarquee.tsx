@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils/cn"
 
-import { type Pairing } from "../Homepage/useValuesMarquee"
 import {
   Section,
   SectionContent,
@@ -9,7 +8,6 @@ import {
 } from "../ui/section"
 
 type ItemProps = React.HTMLAttributes<HTMLButtonElement> & {
-  pairing: Pairing
   separatorClass: string
   container?: HTMLElement | null
   label: string
