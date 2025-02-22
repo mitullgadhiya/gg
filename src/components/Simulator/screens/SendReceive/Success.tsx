@@ -9,18 +9,15 @@ import { cn } from "@/lib/utils/cn"
 
 import { getMaxFractionDigitsUsd } from "../../utils"
 import { WalletHome } from "../../WalletHome"
-import type { TokenBalance } from "../../WalletHome/interfaces"
 
 const ICON_SIZE = "text-[4.5rem]"
 
 type SuccessProps = {
-  tokenBalances: Array<TokenBalance>
   sentEthAmount: number
   ethPrice: number
   recipient: string
 }
 export const Success = ({
-  tokenBalances,
   sentEthAmount,
   ethPrice,
   recipient,
@@ -69,7 +66,6 @@ export const Success = ({
       {showWallet ? (
         <motion.div animate={{ opacity: [0, 1] }} key="wallet-home">
           <WalletHome
-            tokenBalances={tokenBalances}
             activeTabIndex={categoryIndex}
             setActiveTabIndex={setCategoryIndex}
           />
