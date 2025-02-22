@@ -1,4 +1,4 @@
-import { Lang, Languages } from "@/lib/types"
+import { Lang } from "@/lib/types"
 
 import * as url from "@/lib/utils/url"
 
