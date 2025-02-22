@@ -23,13 +23,12 @@ type NavMenuProps = BaseHTMLAttributes<HTMLDivElement> & {
 }
 
 const Menu = ({ sections, ...props }: NavMenuProps) => {
-  const { activeSection, direction, handleSectionChange, isOpen } =
+  const { activeSection, handleSectionChange, isOpen } =
     useNavMenu(sections)
 
   return (
     <div {...props}>
       <Root
-        dir={direction}
         orientation="horizontal"
         onValueChange={handleSectionChange}
         delayDuration={0}
