@@ -9,7 +9,7 @@ import PageMetadata from "@/components/PageMetadata"
 import { ButtonLink } from "@/components/ui/buttons/Button"
 import { VStack } from "@/components/ui/flex"
 
-import HeroImage from "@/public/images/heroes/developers-hub-hero.jpg"
+import HeroImage from "/images/heroes/developers-hub-hero.jpg"
 
 const Page = (props: ChildOnlyProp) => (
   <VStack className="mx-auto my-0 w-full" {...props} />
