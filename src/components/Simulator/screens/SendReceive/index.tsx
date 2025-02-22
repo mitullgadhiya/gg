@@ -1,15 +1,13 @@
-import React, { useEffect, useMemo, useState } from "react"
+import React, { useEffect, useState } from "react"
 
 import type { PhoneScreenProps } from "@/lib/types"
 
 import {
-  ETH_TRANSFER_FEE,
   USD_RECEIVE_AMOUNT,
 } from "../../constants"
 import { defaultTokenBalances } from "../../constants"
 import { ProgressCta } from "../../ProgressCta"
 import { WalletHome } from "../../WalletHome"
-import type { TokenBalance } from "../../WalletHome/interfaces"
 
 import { CONTACTS } from "./constants"
 import { ReceivedEther } from "./ReceivedEther"
@@ -26,10 +24,6 @@ export const SendReceive = ({ nav, ctaLabel }: PhoneScreenProps) => {
   const [chosenAmount, setChosenAmount] = useState(0)
   const ethChosenAmount = chosenAmount / ethPrice
   const [recipient, setRecipient] = useState<string | null>(null)
-  const ethAfterTransfer = Math.max(
-    ethReceiveAmount - chosenAmount / ethPrice - ETH_TRANSFER_FEE,
-    0
-  )
 
   useEffect(() => {
     if (step !== 2) return
@@ -42,20 +36,6 @@ export const SendReceive = ({ nav, ctaLabel }: PhoneScreenProps) => {
     // Reset chosen amount if user goes back to step 2
     setRecipient(null)
   }, [step])
-
-  const tokenBalancesAfterSend = useMemo<Array<TokenBalance>>(
-    () =>
-      defaultTokenBalances.map((token) =>
-        token.ticker === "ETH"
-          ? {
-              ...token,
-              amount: ethAfterTransfer,
-              usdConversion: ethPrice,
-            }
-          : token
-      ),
-    [ethPrice, ethAfterTransfer]
-  )
 
   return (
     <>
@@ -91,7 +71,6 @@ export const SendReceive = ({ nav, ctaLabel }: PhoneScreenProps) => {
       )}
       {[6].includes(step) && (
         <Success
-          tokenBalances={tokenBalancesAfterSend}
           ethPrice={ethPrice}
           sentEthAmount={ethChosenAmount}
           recipient={recipient!}
