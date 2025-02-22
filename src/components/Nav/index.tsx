@@ -1,79 +1,97 @@
-import { BaseHTMLAttributes } from "react"
-import { motion } from "framer-motion"
-import {
-  Item,
-  List,
-  Root,
-  Trigger,
-  Viewport,
-} from "@radix-ui/react-navigation-menu"
+import { useRef } from "react"
+import dynamic from "next/dynamic"
 
-import { cn } from "@/lib/utils/cn"
+import { EthHomeIcon } from "@/components/icons"
+import Search from "@/components/Search"
 
-import { MAIN_NAV_ID, SECTION_LABELS } from "@/lib/constants"
+import { Button } from "../ui/buttons/Button"
+import { BaseLink } from "../ui/Link"
 
-import { Button } from "../../ui/buttons/Button"
-import type { NavSections } from "../types"
+import DesktopNavMenu from "./Desktop"
+import { useNav } from "./useNav"
 
-import MenuContent from "./MenuContent"
-import { useNavMenu } from "./useNavMenu"
+import { useBreakpointValue } from "@/hooks/useBreakpointValue"
+import { useIsClient } from "@/hooks/useIsClient"
 
-type NavMenuProps = BaseHTMLAttributes<HTMLDivElement> & {
-  sections: NavSections
-}
+const Menu = dynamic(() => import("./Menu"), {
+  ssr: false,
+  loading: () => <div />,
+})
+const MobileNavMenu = dynamic(() => import("./Mobile"), { ssr: false })
 
-const Menu = ({ sections, ...props }: NavMenuProps) => {
-  const { activeSection, handleSectionChange, isOpen } =
-    useNavMenu(sections)
+// TODO display page title on mobile
+const Nav = () => {
+  const { toggleColorMode, linkSections } = useNav()
+  const navWrapperRef = useRef(null)
+  const isClient = useIsClient()
+  const desktopScreen = useBreakpointValue({ base: false, md: true })
+
+  const dj = () => {
+    console.log("clicked wallet")
+  }
 
   return (
-    <div {...props}>
-      <Root
-        orientation="horizontal"
-        onValueChange={handleSectionChange}
-        delayDuration={0}
+    <div className="sticky top-0 z-sticky w-full">
+      <nav
+        ref={navWrapperRef}
+        className="flex h-19 justify-center border-b border-b-disabled bg-background p-4 xl:px-8"
+        aria-label="nav-primary"
       >
-        <List id={MAIN_NAV_ID} className="m-0 flex list-none">
-          {SECTION_LABELS.map((sectionKey) => {
-            const { label, items } = sections[sectionKey]
-            const isActive = activeSection === sectionKey
+        <div className="flex w-full max-w-screen-2xl items-center justify-between md:items-stretch md:justify-normal">
+          <BaseLink
+            href="/"
+            aria-label="home-menu"
+            className="inline-flex items-center no-underline"
+          >
+            <EthHomeIcon className="h-[35px] w-[22px] opacity-85 hover:opacity-100" />
+          </BaseLink>
+          {/* Desktop */}
+          <div className="ms-3 flex w-full justify-end md:justify-between xl:ms-8">
+            {/* avoid rendering desktop Menu version on mobile */}
+            {isClient && desktopScreen ? (
+              <Menu className="hidden md:block" sections={linkSections} />
+            ) : (
+              <div />
+            )}
 
-            return (
-              <Item key={sectionKey} value={label}>
-                <Trigger asChild>
-                  <Button
-                    className={cn(
-                      "relative whitespace-nowrap px-3 py-2 lg:px-4",
-                      isActive ? "text-primary" : "text-body",
-                      "after:absolute after:inset-x-0 after:top-full after:h-4 after:content-['']"
-                    )}
-                    variant="ghost"
-                  >
-                    {/* Animated highlight for active section */}
-                    {isActive && (
-                      <motion.div
-                        layoutId="active-section-highlight"
-                        className="absolute inset-0 z-0 rounded bg-primary-low-contrast"
+            <Search>
+              {() => {
+                if (!isClient) return null
+                return (
+                  <div className="flex items-center">
+                    {/* Desktop */}
+                    <div className="hidden md:flex">
+                    <Button
+                        onClick={dj}
+                        size="sm"
+                      >
+                        Connect Wallet
+                      </Button>
+                      <DesktopNavMenu toggleColorMode={toggleColorMode} />
+                    </div>
+
+                    <div className="flex md:hidden">
+                      {/* Mobile */}
+                      <Button
+                        onClick={dj}
+                        size="sm"
+                      >
+                        Connect Wallet
+                      </Button>
+                      <MobileNavMenu
+                        toggleColorMode={toggleColorMode}
+                        linkSections={linkSections}
                       />
-                    )}
-                    <span className="relative z-10">{label}</span>
-                  </Button>
-                </Trigger>
-                {/* Desktop Menu content */}
-                <MenuContent
-                  items={items}
-                  isOpen={isOpen}
-                  sections={sections}
-                />
-              </Item>
-            )
-          })}
-        </List>
-
-        <Viewport />
-      </Root>
+                    </div>
+                  </div>
+                )
+              }}
+            </Search>
+          </div>
+        </div>
+      </nav>
     </div>
   )
 }
 
-export default Menu
+export default Nav
