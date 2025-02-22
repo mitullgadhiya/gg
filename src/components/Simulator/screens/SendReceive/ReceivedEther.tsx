@@ -80,7 +80,6 @@ export const ReceivedEther = ({
       <WalletHome
         nav={nav}
         isEnabled={[received, false]}
-        tokenBalances={tokenBalances}
       />
       <AnimatePresence>
         {showToast && !hidden && (
