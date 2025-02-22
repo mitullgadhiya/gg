@@ -23,9 +23,6 @@ import { Divider } from "@/components/ui/divider"
 import { Center, Flex, HStack, Stack, VStack } from "@/components/ui/flex"
 
 import { cn } from "@/lib/utils/cn"
-import {
-  getLocaleForNumberFormat,
-} from "@/lib/utils/translations"
 
 import criminalActivity from "@/public/images/finance_transparent.png"
 import ethCoin from "@/public/images/impact_transparent.png"
@@ -133,7 +130,7 @@ const Image400 = ({ src }: Pick<ImageProps, "src">) => (
 const WhatIsEthereumPage = () => {
 
   const { locale } = useRouter()
-  const localeForNumberFormat = getLocaleForNumberFormat(locale! as Lang)
+  const localeForNumberFormat = locale;
 
   const formatNumber = (
     value: number,
