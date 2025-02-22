@@ -32,10 +32,6 @@ import {
 import { cn } from "@/lib/utils/cn"
 import { trackCustomEvent } from "@/lib/utils/matomo"
 
-import {
-  GITHUB_REPO_URL,
-} from "@/lib/constants"
-
 import BuildersImage from "@/public/images/heroes/developers-hub-hero.jpg"
 import ActivityImage from "@/public/images/heroes/layer-2-hub-hero.jpg"
 import LearnImage from "@/public/images/heroes/learn-hub-hero.png"
