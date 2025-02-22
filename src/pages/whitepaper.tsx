@@ -192,7 +192,7 @@ const WhatIsEthereumPage = ({
       <MainArticle>
         <PageMetadata
           title="What is Ramicoin ?"
-          description="Learn about Ramicoin, what it does and how to try it for yourself."
+          description="Learn about Ramicoin&lsquo; what it does and how to try it for yourself."
           image="/images/what-is-ethereum.png"
         />
         <Content>
@@ -236,11 +236,11 @@ const WhatIsEthereumPage = ({
                         Low Liquidity
                       </h2>
                       <Stack className="gap-6 lg:text-[1.4rem]">
-                        <p>Everyone wants to or are trying to make money and build a passive cashflow, correct!</p>
-                        <p>We all agree on one thing that - Trading is the best way to make money from anywhere in the world, isn&apos;t it awesome!&apos;</p>
+                        <p>Everyone wants to or are trying to make money and build a passive cashflow&lsquo; correct!</p>
+                        <p>We all agree on one thing that - Trading is the best way to make money from anywhere in the world&lsquo; isn&apos;t it awesome!&apos;</p>
                         <p>But the main problem is that because of small capital they are unable to scale it and end up in disappointment.</p>
                         <p>Ramicoin is exactly solving that problem by leveraging the power of Blockchain Technology and bring everyone together under one roof.</p>
-                        <p>How ? Let's understand.</p>
+                        <p>How ? Let&apos;s understand.</p>
                       </Stack>
                     </Stack>
                   </Summary>
@@ -427,7 +427,7 @@ const WhatIsEthereumPage = ({
               <Width60>
                 <H2>Transparency</H2>
                 <Stack className="gap-6 lg:text-[1.3rem]">
-                  <p>Watch every trading session live on Ramicoin&apos;s offical youtube channel: @ramicoin. We trade in open, learn, earn and derive value.</p>
+                  <p>Watch every trading session live on Ramicoin&apos;s offical youtube channel: @ramicoin. We trade in open&lsquo; learn&lsquo; earn and derive value.</p>
                   <p>Put your entries at everyones stop loss.</p>
                 </Stack>
               </Width60>
