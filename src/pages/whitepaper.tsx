@@ -130,8 +130,7 @@ const Image400 = ({ src }: Pick<ImageProps, "src">) => (
 )
 
 
-const WhatIsEthereumPage = ({
-}) => {
+const WhatIsEthereumPage = () => {
 
   const { locale } = useRouter()
   const localeForNumberFormat = getLocaleForNumberFormat(locale! as Lang)
