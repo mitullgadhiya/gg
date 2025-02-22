@@ -1,6 +1,5 @@
 import { forwardRef } from "react"
 import { motion } from "framer-motion"
-// import { useTranslation } from "next-i18next"
 
 import { cn } from "@/lib/utils/cn"
 
@@ -24,7 +23,6 @@ type HamburgerProps = ButtonProps & {
 
 const HamburgerButton = forwardRef<HTMLButtonElement, HamburgerProps>(
   ({ isMenuOpen, className, ...props }, ref) => {
-    // const { t } = useTranslation("common")
 
     return (
       <Button
