@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import { MdClose, MdInfo } from "react-icons/md"
 
@@ -16,7 +16,6 @@ type ReceivedEtherProps = SimulatorNavProps & {
 }
 export const ReceivedEther = ({
   nav,
-  defaultTokenBalances,
   ethReceiveAmount,
   ethPrice,
   sender,
@@ -43,22 +42,6 @@ export const ReceivedEther = ({
       clearTimeout(timeout)
     }
   }, [received])
-
-  const tokensWithEthBalance = useMemo<Array<TokenBalance>>(
-    () =>
-      defaultTokenBalances.map((token) =>
-        token.ticker === "ETH"
-          ? {
-              ...token,
-              amount: ethReceiveAmount,
-              usdConversion: ethPrice,
-            }
-          : token
-      ),
-    [defaultTokenBalances, ethPrice, ethReceiveAmount]
-  )
-
-  const tokenBalances = received ? tokensWithEthBalance : defaultTokenBalances
 
   const displayEth: string = new Intl.NumberFormat("en", {
     maximumFractionDigits: 5,
