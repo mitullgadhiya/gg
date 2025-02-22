@@ -16,7 +16,14 @@ const formatLargeNumber = (value: number): string => {
   }).format(value)
 }
 
-export const useStatsBoxGrid = (data: unknown) => {
+interface StatsData {
+  totalProfit: { value: number }
+  tradingCapital: { value: number }
+  roi: { value: number }
+  totalInvestors: { value: number }
+}
+
+export const useStatsBoxGrid = (data: StatsData) => {
   const { totalProfit, tradingCapital, roi, totalInvestors } = data
 
   const totalStakedInUsd = totalProfit.value
