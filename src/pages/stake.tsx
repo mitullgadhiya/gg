@@ -1,5 +1,5 @@
 import { ReactNode } from "react"
-import { ChildOnlyProp, Lang } from "@/lib/types"
+import { ChildOnlyProp } from "@/lib/types"
 
 import Card, { CardProps } from "@/components/Card"
 import HubHero from "@/components/Hero/HubHero"
