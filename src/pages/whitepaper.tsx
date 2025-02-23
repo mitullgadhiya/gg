@@ -4,7 +4,6 @@ import type { HTMLAttributes } from "react"
 
 import type {
   ChildOnlyProp,
-  Lang,
 } from "@/lib/types"
 
 import {
