@@ -9,7 +9,11 @@
   "env": {
     "es6": true
   },
-  "plugins": ["simple-import-sort", "@typescript-eslint", "unused-imports"],
+  "plugins": [
+    "simple-import-sort",
+    "@typescript-eslint",
+    "unused-imports"
+  ],
   "parser": "@typescript-eslint/parser",
   "rules": {
     "simple-import-sort/imports": [
@@ -22,27 +26,55 @@
           ],
           // Packages. `react` related packages come first.
           // Also, put `react-icons` in sorting order not with `react`
-          ["^react(?!-.)$", "^\\w", "^@\\w"],
+          [
+            "^react(?!-.)$",
+            "^\\w",
+            "^@\\w"
+          ],
           // From the `types` directory.
-          ["^@/lib/types", "^@/lib/interfaces"],
+          [
+            "^@/lib/types",
+            "^@/lib/interfaces"
+          ],
           // From the `components` directory.
-          ["^@/components"],
+          [
+            "^@/components"
+          ],
           // From the `utils` directory.
-          ["^@/lib/utils"],
+          [
+            "^@/lib/utils"
+          ],
           // From the `data` directory.
-          ["^@/data"],
+          [
+            "^@/data"
+          ],
           // From the `constants` directory.
-          ["^@/lib/constants"],
+          [
+            "^@/lib/constants"
+          ],
           // From the `.storybook/utils` file
-          ["^@/storybook-utils"],
+          [
+            "^@/storybook-utils"
+          ],
           // Parent imports. Put `..` last.
-          ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+          [
+            "^\\.\\.(?!/?$)",
+            "^\\.\\./?$"
+          ],
           // Other relative imports. Put same-folder imports and `.` last.
-          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+          [
+            "^\\./(?=.*/)(?!/?$)",
+            "^\\.(?!/?$)",
+            "^\\./?$"
+          ],
           // Style imports.
-          ["^.+\\.s?css$"],
+          [
+            "^.+\\.s?css$"
+          ],
           // Side effect imports.
-          ["^\\u0000"]
+          [
+            "^\\u0000"
+          ]
         ]
       }
     ],
@@ -75,5 +107,15 @@
         ]
       }
     ]
-  }
+  },
+  "overrides": [
+    {
+      "files": [
+        "src/pages/index.tsx"
+      ],
+      "rules": {
+        "simple-import-sort/imports": "off"
+      }
+    }
+  ]
 }
