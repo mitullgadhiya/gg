@@ -1,13 +1,17 @@
 import { HTMLAttributes } from "react"
+
 import { type StaticImageData } from "next/image"
 
 import { Image } from "@/components/Image"
+
 import { ButtonLink } from "@/components/ui/buttons/Button"
 
 import { cn } from "@/lib/utils/cn"
 
 import { ChevronNext } from "../Chevron"
+
 import { Card, CardTitle } from "../ui/card"
+
 import { Center } from "../ui/flex"
 
 export type BentoCardProps = HTMLAttributes<HTMLDivElement> & {
