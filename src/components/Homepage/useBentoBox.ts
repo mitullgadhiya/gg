@@ -4,7 +4,7 @@ import ImpactImage from "../../../public/images/impact_transparent.png"
 import ManAndDogImage from "../../../public/images/man-and-dog-playing.png"
 import ManBabyWomanImage from "../../../public/images/man-baby-woman.png"
 import RobotBarImage from "../../../public/images/robot-help-bar.png"
-import MergeImage from "../../../public/images/upgrades/merge.png"
+import MergeImage from "../../../public/images/impact_transparent.png"
 
 type Breakpoint = "mobile" | "lg" | "xl"
 type Direction = "down" | "up" | "right" | "left"
