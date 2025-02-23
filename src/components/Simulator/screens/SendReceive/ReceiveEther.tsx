@@ -8,7 +8,7 @@ import { Flex } from "@/components/ui/flex"
 import { FAKE_DEMO_ADDRESS } from "../../constants"
 import { NotificationPopover } from "../../NotificationPopover"
 
-import QrImage from "@/public/images/qr-code-ethereum-org.png"
+import QrImage from "../../../../../public/images/qr-code-ethereum-org.png"
 
 export const ReceiveEther = () => (
   <motion.div
