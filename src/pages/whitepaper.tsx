@@ -24,12 +24,12 @@ import { Center, Flex, HStack, Stack, VStack } from "@/components/ui/flex"
 
 import { cn } from "@/lib/utils/cn"
 
-import criminalActivity from "/images/finance_transparent.png"
-import ethCoin from "/images/impact_transparent.png"
-import whatAreSmartContracts from "/images/infrastructure_transparent.png"
-import whoRunsEthereum from "/images/run-a-node/ethereum-inside.png"
-import stats from "/images/upgrades/newrings.png"
-import hero from "/images/what-is-ethereum.png"
+import criminalActivity from "@/public/images/finance_transparent.png"
+import ethCoin from "@/public/images/impact_transparent.png"
+import whatAreSmartContracts from "@/public/images/infrastructure_transparent.png"
+import whoRunsEthereum from "@/public/images/run-a-node/ethereum-inside.png"
+import stats from "@/public/images/upgrades/newrings.png"
+import hero from "@/public/images/what-is-ethereum.png"
 
 const Slogan = (props: ChildOnlyProp) => (
   <p className="text-[2rem] leading-xs" {...props} />
@@ -123,7 +123,7 @@ const NoWrapText = (props: ChildOnlyProp) => (
 )
 
 const Image400 = ({ src }: Pick<ImageProps, "src">) => (
-  <Image src={src} alt="" width={400} />
+  <Image src={src} alt="" width={400} height={400} />
 )
 
 

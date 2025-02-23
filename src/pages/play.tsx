@@ -17,10 +17,10 @@ import { Flex } from "@/components/ui/flex"
 import { cn } from "@/lib/utils/cn"
 
 // -- Hero
-import communityHeroImg from "/images/heroes/community-hero.png"
+import communityHeroImg from "@/public/images/heroes/community-hero.png"
 // -- Cards
-import upgradesCoreImg from "/images/upgrades/core.png"
-import whatIsEthereumImg from "/images/what-is-ethereum.png"
+import upgradesCoreImg from "@/public/images/upgrades/core.png"
+import whatIsEthereumImg from "@/public/images/what-is-ethereum.png"
 
 const CardContainer = ({ children }: ChildOnlyProp) => {
   return <Flex className="-mx-4 flex-wrap">{children}</Flex>

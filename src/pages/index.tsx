@@ -32,12 +32,8 @@ import {
 import { cn } from "@/lib/utils/cn"
 import { trackCustomEvent } from "@/lib/utils/matomo"
 
-import BuildersImage from "/images/heroes/developers-hub-hero.jpg"
-import ActivityImage from "/images/heroes/layer-2-hub-hero.jpg"
-import LearnImage from "/images/heroes/learn-hub-hero.png"
-import CommunityImage from "/images/heroes/quizzes-hub-hero.png"
-import Hero from "/images/home/hero.png"
-
+import HeroImage from "@/public/images/home/hero.png"
+import LayerImage from "@/public/images/heroes/layer-2-hub-hero.jpg"
 
 const HomePage = () => {
   const {
@@ -54,7 +50,7 @@ const HomePage = () => {
         title="Ramicoin.com: The complete guide to Ramicoin"
         description="Ramicoin is a global, decentralized platform for money and games. On Ramicoin, you can start earning from staking, playing games accessible anywhere in the world."
       />
-      <HomeHero heroImg={Hero} className="w-full" />
+      <HomeHero heroImg={HeroImage} className="w-full" />
       <div className="w-full space-y-32 px-4 md:mx-6 lg:space-y-48">
         <div className="my-20 grid w-full grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-4 md:gap-x-10">
           {subHeroCTAs.map(
@@ -159,7 +155,7 @@ const HomePage = () => {
         {/* Activity - The strongest ecosystem */}
         <Section id="activity" variant="responsiveFlex">
           <SectionBanner>
-            <Image src={ActivityImage} alt="" />
+            <Image src={LayerImage} alt="" width={800} height={500} />
           </SectionBanner>
 
           <SectionContent>
@@ -185,7 +181,7 @@ const HomePage = () => {
           className="md:flex-row-reverse"
         >
           <SectionBanner>
-            <Image src={LearnImage} alt="" />
+            <Image src="/images/heroes/learn-hub-hero.png" alt="" width={800} height={500} />
           </SectionBanner>
 
           <SectionContent>
@@ -243,7 +239,7 @@ const HomePage = () => {
         {/* Builders - Blockchain's biggest builder community */}
         <Section id="builders" variant="responsiveFlex">
           <SectionBanner className="relative">
-            <Image src={BuildersImage} alt="" />
+            <Image src="/images/heroes/developers-hub-hero.jpg" alt="" width={800} height={500} />
           </SectionBanner>
 
           <SectionContent>
@@ -285,7 +281,7 @@ const HomePage = () => {
           className="md:flex-row-reverse"
         >
           <SectionBanner>
-            <Image src={CommunityImage} alt="" />
+            <Image src="/images/heroes/quizzes-hub-hero.png" alt="" width={800} height={500} />
           </SectionBanner>
 
           <SectionContent>
