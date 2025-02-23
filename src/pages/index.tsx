@@ -32,8 +32,8 @@ import {
 import { cn } from "@/lib/utils/cn"
 import { trackCustomEvent } from "@/lib/utils/matomo"
 
-import HeroImage from "@/public/images/home/hero.png"
-import LayerImage from "@/public/images/heroes/layer-2-hub-hero.jpg"
+import HeroImage from "../../public/images/home/hero.png"
+import LayerImage from "../../public/images/heroes/layer-2-hub-hero.jpg"
 
 const HomePage = () => {
   const {

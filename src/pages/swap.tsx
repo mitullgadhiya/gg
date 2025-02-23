@@ -10,7 +10,7 @@ import { Divider } from "@/components/ui/divider"
 
 import { walletOnboardingSimData } from "@/data/WalletSimulatorData"
 
-import HeroImage from "@/public/images/wallets/wallet-hero.png"
+import HeroImage from "../../public/images/wallets/wallet-hero.png"
 
 export const StyledCard = (props: ComponentPropsWithRef<typeof Card>) => (
   <Card
